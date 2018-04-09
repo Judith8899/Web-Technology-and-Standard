@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+<xs:element name="global" type="xs:string"/>
+<xs:element name="global2" type="xs:string"/>
+    
+<xs:element name="Student">
+    <xs:complexType>
+        <xs:sequence>
+            <xs:element name="StusentID" type="xs:string"/>
+            <xs:element name="FirstName" type="xs:string"/>
+            <xs:element name="LastName" type="xs:string"/>
+            <xs:element name="StartDate" type="xs:date"/>
+            <xs:element name="EndDate" type="xs:date"/>
+            <xs:element name="StudentMajor" type="xs:string"/>
+            <xs:element name="School" type="SchoolName"/>
+            <xs:element name="StudentBOD" type="xs:date"/>
+            <xs:element name="Sex" type="xs:string"/>	  
+            <xs:element name="Age" type="xs:int"/>
+            <xs:element name="Nationality" type="xs:string"/>
+            <xs:element name="Hobby" type="xs:string"/>
+            
+            <xs:element ref="global" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element ref="global2" minOccurs="2" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:element>
+<xs:complexType name="SchoolName">
+    <xs:sequence>
+        <xs:element name="Year" type="years"/>
+    </xs:sequence>
+</xs:complexType>
+<xs:complexType name="years">
+    <xs:sequence>
+        <xs:element name="ClassName" type="xs:string"/>
+        <xs:element name="ClassID" type="courses"/>
+    </xs:sequence>
+</xs:complexType>
+<xs:complexType name="courses">
+    <xs:all>
+        <xs:element name="CourseName" type="xs:string"/>
+        <xs:element name="CourseID" type="courseInfo"/>
+        <xs:element name="IntroductorName" type="xs:string"/>
+        <xs:element name="Capacity" type="xs:int"/>
+    </xs:all>
+</xs:complexType>
+<xs:simpleType name="courseInfo">
+    <xs:restriction base="xs:string">
+        <xs:pattern value="ML|DA|Web|DM|Math"/>
+    </xs:restriction>
+</xs:simpleType>
+</xs:schema>

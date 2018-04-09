@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<link rel="stylesheet" href="css/bootstrap.css" />
+	<link rel="stylesheet" href="css/style.css" />
+
+	<body>
+		<div class="main">
+			<div class="header">
+				<h1>
+        <img src="img/memorandum.png" alt="">
+        <span>MEMO</span>
+		</h1>
+			</div>
+			<!--nav-->
+			<div class="nav">
+				<h1 class="left">
+        <img src="img/memorandum.png" alt="">
+        <span>MEMO</span>
+       </h1>
+				<div class="right">
+					<input type="text" placeholder="YOUR DATE" id="datePiker" name="date" readonly="readonly">
+					<input type="text" placeholder="YOUR MEMORANDUM" id="memorandumText">
+					<input type="submit" value="ADD" id="Add">
+				</div>
+			</div>
+			<div>
+				<table id="content" class="table">
+					<tr>
+						<th width="200">CONTENT</th>
+						<th width="200">DATE</th>
+						<th width="200">ADD DATE</th>
+						<th width="200">OPERATION</th>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.js"></script>
+	<script type="text/javascript" src="js/laydate/laydate.js"></script>
+	<script type="text/javascript" src="js/index.js"></script>
+
+</html>
