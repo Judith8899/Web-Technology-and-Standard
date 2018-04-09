@@ -1,0 +1,42 @@
+	.ImgStyle{
+    width: 100%;height: 500px
+	}
+	#content>div{
+		display: inline-block;
+		width: 24%;
+		float: left;
+	}
+	@media screen and (max-width: 1600px) {
+    #content>div{
+		
+		width: 49%
+	}
+}
+	@media screen and (max-width: 914px) {
+    #content>div{
+		width: 100%
+	
+	}
+}
+.cur{
+	display: block
+}
+.tabHide{
+   display: none
+}
+.tabDiv{
+	display: inline-block;
+	cursor: pointer;
+
+}
+.tabStyle{
+	background-color: #edd498;
+	border-radius: 5px;
+    border-top: 1px solid #eac877;
+    border-left: 1px solid #eac877;
+    border-right: 1px solid #eac877;
+}
+.tabTitle{
+	border-bottom: 1px solid #eac877;
+    width: 434px;
+}
