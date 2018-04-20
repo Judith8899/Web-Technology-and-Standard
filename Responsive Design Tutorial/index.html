@@ -1,0 +1,303 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>
+
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+		<title>Web Final Project</title>
+
+		<link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
+		<link rel="stylesheet" href="css/bootstrap.css" />
+
+	</head>
+
+	<body>
+
+		<div id="lrzj" class="light">
+			<a href="#" class="prev"><img src="./images/icon_arrow-up_light.png" alt="" width="28" height="31" /></a>
+			<a href="#" class="next"><img src="./images/icon_arrow-down_light.png" alt="" width="28" height="31" /></a>
+		</div>
+		<div id="wrapper">
+
+			<div id="main">
+
+				<div class="section">
+					<h1>Responsive Design</h1>
+					<div class="w_col-12">
+
+						<p>Nowadays, we are facing various electronic devices, such as laptop, mobile phone, tablet PC, and so on. Have you ever notice that there are different kinds of display when we browse same website in different devices? It's all about a website designing technology called responsive design. Because the original intention of responsive design is to fit a variety of windows of electronic devices.</p>
+
+					</div>
+				</div>
+
+				<div class="section">
+					<h1>HTML5 Overview</h1>
+					<div class="w_col-6">
+						<p>HTML5 is from cooperation between W3C (World Wide Web Consortium) and WHATWG (Web Hypertext Application Technology Working Group).
+							<p>In HTML5, there are some rules:</p>
+						</p>
+						<ul>
+							<li>1. Those new characteristics are supposed to be based on HTML, CSS, DOM and JavaScript.</li>
+							<li>2. Reduce the independency on external plug-ins(Such as Flash).</li>
+							<li>3. Excellent ability in exception processing</li>
+							<li>4. HTML5 is supposed to be independent from devices</li>
+							<li>5. Development progress should be transparent</li>
+						</ul>
+					</div>
+					<div class="w_col-6">
+						<p>In HTML5, there are a variety of interesting characteristics:</p>
+						<ul>
+							<li>1. Canvas</li>
+							<li>2. Video &Audio
+								<a class="jumpTo">- Jump To Media Playback</a>
+							</li>
+							<li>3. Better support for local offline storage</li>
+							<li>4. New special content elements: article, footer, header and section</li>
+							<li>5. New sheet controls: calendar, date, time, email, url and search</li>
+						</ul>
+					</div>
+				</div>
+				<div class="section">
+					<h1>Canvas</h1>
+					<h2>What is Canvas?</h2>
+					<p>Canvas is used to draw pictures in website using JavaScript. Canvas is a rectangular area, and we can control every pixel in it.Many methods are encapsulated in Canvas, such drawing path, rectangular, circle, string and inserting pitcures.</p>
+
+					<h2>How to create Canvas?</h2>
+					<pre>&lt;html&gt;
+&lt;head&gt; 
+&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;canvas  id="myCanvas"&gt;&lt;/canvas&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+					<!--<img src="images/canvasimg.png">-->
+
+					<h2>How to draw in JavaScript?</h2>
+					<p>Actually, we can not draw directly through Canvas. All of drawing work are supposed to be completed in JavaScript:</p>
+					<pre>
+&lt;html&gt;
+
+&lt;head&gt;  
+&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+  &lt;script type=&quot;text/javascript&quot;&gt;
+  var canvas=document.getElementById('myCanvas');
+  var ctx=canvas.getContext('2d');
+  ctx.fillStyle='#FF0000';
+  ctx.fillRect(0,0,80,100);
+  &lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+					<p>Firstly, locate &lt;canvas&gt:
+						<pre>
+
+ var c=document.getElementById("myCanvas");
+	
+</pre>
+						<p>Then, create context object:</p>
+						<pre>
+ var ctx=c.getContext("2d");	
+</pre>
+						<p>getContext("2d") is a build-in object of HTML5, with various methods to draw lines, rectangles, circles, characters and pictures. Here's an example to draw a red rectangle:</p>
+						<pre>
+ctx.fillStyle="#FF0000";
+ctx.fillRect(0,0,150,75);
+</pre>
+						<P>Example:</P>
+						<canvas id="myCanvas" width="200" height="100" style="border:1px solid #c3c3c3;">
+</canvas>
+				</div>
+				<div class="section">
+					<h1>Media Playback</h1>
+					<div class="w_col-12">
+						<h2>What is timed media palyback?</h2>
+						<p>Timed media is very dynamic and offers many challenges to tackle with. The compressed media files usually contain data files of video and audio streams, captions, synchronization information, Meta and chapter information. Before HTML5 flash was a choice of implementation for video presentation on web. Now HTML5 includes special tags for supporting audio and video and bunch of interfaces for scripting.</p>
+					</div>
+					<h2>HTML5 (Video) - How it works?
+			<p>To play video in HTML5, we need to implement:</p>
+					
+					<pre>
+ &lt;html&gt;
+  &lt;video width="320" height="240" controls&gt;
+  &lt;source src="movie.mp4" type="video/mp4"&gt;
+  &lt;source src="movie.ogg" type="video/ogg"&gt;
+  &lt;/video&gt;
+ &lt;/html&gt;
+</pre>
+
+
+<h2>HTML5 &lt;video&gt; - Using DOM</h2>
+					<p>&lt;video&gt; and &lt;audio&gt; own same methods, attributes and events in HTML5. The methods, attributes and events in &lt;video&gt; and &lt;audio&gt; can be controlled by JavaScript. The methods can be used to play, pause, load, etc.The attributes (such as length, volume, etc.) can be read or set. You can be notified by DOM event, such like &lt;video&gt; is playing, paused, stopped, etc. As the example,it shows how does &lt;video&gt; be read, set and called methods.</p>
+					<p>Example:</p>
+					<div style="text-align:center">
+						<button onclick="playPause()">play/stop</button>
+						<button onclick="makeBig()">enlarge</button>
+						<button onclick="makeSmall()">narrow</button>
+						<button onclick="makeNormal()">normal</button>
+						<br>
+						<video id="video1" width="420">
+							<source src="images/1080.mp4" type="video/mp4">
+
+						</video>
+					</div>
+
+				</div>
+
+				<div class="section">
+					<h1>Offline Storage Database</h1>
+					<div class="w_col-6">
+						<h2>What is offline web application?</h2>
+						<p>An application cache mechanism is provided with HTML5 and it can support Web application to run offline. Developers can specify whether browser caches are available in an offline state. In this condition, applications which is already cached can still run when users reopen or restart it.</p>
+					</div>
+					<div class="w_col-6">
+						<h2>Why use offline web application?</h2>
+						<p>Offline browsing: Users still have access to website even in an offline condition.Speed: It would be faster because cached resources saved locally.Reduce server load: Only renewed content need to be loaded.</p>
+					</div>
+
+					<h2>Foundation of Cache Manifest</h2>
+					<p>To enable application caching, in the document,
+						<html> there is a manifest attribute：</p>
+					<pre>
+ &lt;html manifest="demo.appcache"&gt;
+ .....
+ &lt;/html&gt;
+</pre>
+
+					<p>Each page that specifies the manifest is cached when the user accesses it. If the manifest attribute is not specified, the page is not cached (unless the page is specified directly in the manifest file). The proposed file extension for the manifest file is: ".appcache".</p>
+					<h2>Manifest File</h2>
+					<p>Manifest file is a simple text file, It tells the browser what is cached (and what is not cached). Manifest file has three parts:</p>
+					<ul>
+						<li>1.CACHE MANIFEST - The following files will be cached after the first download.</li>
+						<li>2.NETWORK - The following files in this title need to be connected to the server and will not be cached.</li>
+						<li>3.FALLBACK - The following file specifies the return page (such as a 404 page) when the page is not accessible</li>
+					</ul>
+					<h3>CACHE MANIFEST</h3>
+					<p>The first line, CACHE MANIFEST, is necessary:</p>
+					<pre>
+CACHE MANIFEST
+/theme.css
+/logo.gif
+/main.js
+</pre>
+					<p>The manifest file above lists three resources:A CSS file, a GIF image, and a JavaScript file. When the manifest file is loaded, the browser downloads the three files from the root directory of the site. Then, no matter when the user is disconnected from the Internet, these resources are still available.</p>
+					<h3>NETWORK</h3>
+					<p>The following NETWORK section specifies that the file "login.php" will never be cached and is not available offline:</p>
+					<pre>
+NETWORK:
+login.php
+</pre>
+					<h3>FALLBACK</h3>
+					<p>The following FALLBACK section specifies that if the Internet connection cannot be established, all the files in the "offline.html" alternative /html5/ directory will be used:</p>
+					<pre>
+FALLBACK:
+/html/ /offline.html
+</pre>
+					<h2>Update the cache</h2>
+					<p>Once the application is cached, it maintains the cache until the following occurs.</p>
+					<ul>
+						<li>1. The user clears the browser cache.</li>
+						<li>2. The manifest file is modified (see the prompt below).</li>
+						<li>3. The manifest file is modified (see the prompt below)</li>
+					</ul>
+					<h2>Example - A complete Manifest file</h2>
+					<pre>
+CACHE MANIFEST
+# 2012-02-21 v1.0.0
+/theme.css
+/logo.gif
+/main.js
+
+NETWORK:
+login.php
+
+FALLBACK:
+/html/ /offline.html
+</pre>
+				</div>
+				<div class="section">
+					<h1>Browser History Management</h1>
+					<div class="w_col-6">
+						<h2>Why use browser history management?</h2>
+						<p>In latest web application, AJAX partial page update is domain. Therefore, it is meaningless for “show previous page” and “show next page”. However, those history can be managed in HTML5 by refreshing those history elements. </p>
+					</div>
+					<div class="w_col-6">
+						<h2>HTML5 history API</h2>
+						<p>HTML5 history API only has 2 methods: history.pushState() and history.replaceState()，and one event: window.onpopstate。</p>
+					</div>
+					<h2>How to implement?</h2>
+					<p>First, add support for the URL state parameter on the server side, for example: page=3 will output the content of the page number (back end template). It can also be the server side that gives the data to the JavaScript, which is written to the page by JavaScript (the front-end template). Next, use history. PushState (), and at the same time, the correct URL with parameters is set. The code might look like this:
+					</p>
+					<pre>
+newURL = "?page=" + pageNow;
+history.pushState(null, "", newURL);
+</pre>
+					<p>Add the popstate event to the window, and add the processing when the navigation changes. The code looks like this:</p>
+					<pre>
+$(window).on("popstate", function(event) {
+    var state = event.originalEvent.state,
+        reg = /page=(\d+)/,
+        regMatch = reg.exec(location.search),
+        pageNow = regMatch === null ? 1 : +regMatch[1];
+    updateByPage(pageNow);
+});
+</pre>
+					<p>So, we're done. In the browser that supports the HTML5 history API, the above sections have already done the page numbering of Ajax pages.</p>
+				</div>
+				<div class="section">
+					<h1>Drag and Drop</h1>
+					<h2>
+					What is Drag and Drop?
+				</h1>
+					<p>We can arrive in the aim that drag one element and drop in another place.</p>
+					<h2>Set the element to drag and drop</h2>
+					<p>Firstly, to make the element draggable, set the draggable attribute to true:</p>
+					<pre>
+&lt;img draggable="true"&gt;
+</pre>
+					<h2>ondragstart and setData()</h2>
+					<p>In the example above, the ondragstart attribute calls a function, drag(event), which specifies the data to be dragged. The datatransfer.setdata () method sets the data type and value of the dragged data:</p>
+					<pre>
+function drag(ev)
+{
+    ev.dataTransfer.setData("Text",ev.target.id);
+}
+</pre>
+					<h2>ondragover</h2>
+					<p>ondragover event specifies where to place the dragged data. By default, data/elements cannot be placed in other elements. If you need to set permission to place, we must block the default handling of the element. If you need to set permission to place, we must block the default handling of the element. This is done by calling the event.preventdefault () of the ondragover event:</p>
+					<pre>
+event.preventDefault()
+</pre>
+					<h2>ondrop</h2>
+					<p>Drop events occur when the data is being dragged. In the example above, the ondrop attribute calls a function, drop(event):</p>
+					<pre>
+function drop(ev)
+{
+    ev.preventDefault();
+    var data=ev.dataTransfer.getData("Text");
+    ev.target.appendChild(document.getElementById(data));
+}
+</pre>
+					<p>The following example is a simple drag and drop instance:</p>
+					<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)">
+						<img src="images/drag.png" draggable="true" ondragstart="drag(event)" id="drag1"></div>
+					<div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+				</div>
+			</div>
+
+		</div>
+
+	</body>
+	<script src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.js"></script>
+	<script type="text/javascript" src="js/pagescroller.min.js"></script>
+	<script type="text/javascript" src="js/index.js"></script>
+
+	</html>
